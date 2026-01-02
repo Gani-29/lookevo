@@ -1,0 +1,98 @@
+// ---------------- NEW ARRIVALS ----------------
+export const newArrivals = [
+  {
+    name: "Gradient Graphic T-shirt",
+    price: 499,
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+    color: "white",
+    size: ["S", "M", "L"],
+    style: "Casual",
+  },
+  {
+    name: "Polo with Tipping Details",
+    price: 699,
+    image: "https://images.unsplash.com/photo-1603252109303-2751441dd157",
+    color: "red",
+    size: ["M", "L"],
+    style: "Casual",
+  },
+  {
+    name: "Black Striped T-shirt",
+    price: 799,
+    image: "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+    color: "black",
+    size: ["S", "M", "L", "XL"],
+    style: "Casual",
+  },
+  {
+    name: "Slim Fit Casual Shirt",
+    price: 999,
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf",
+    color: "blue",
+    size: ["M", "L", "XL"],
+    style: "Formal",
+  },
+  {
+    name: "Oversized Cotton Hoodie",
+    price: 1199,
+    image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990",
+    color: "black",
+    size: ["L", "XL"],
+    style: "Casual",
+  },
+  {
+    name: "Classic White Shirt",
+    price: 899,
+    image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633",
+    color: "white",
+    size: ["S", "M", "L"],
+    style: "Formal",
+  },
+  {
+    name: "Printed Summer T-shirt",
+    price: 399,
+    image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a",
+    color: "yellow",
+    size: ["S", "M"],
+    style: "Casual",
+  },
+  {
+    name: "Relaxed Fit Jeans",
+    price: 1299,
+    image: "https://images.unsplash.com/photo-1542272604-787c3835535d",
+    color: "blue",
+    size: ["M", "L", "XL"],
+    style: "Casual",
+  },
+];
+
+// ---------------- ON SALE / TOP SELLING ----------------
+export const topSelling = [
+  {
+    name: "Skinny Fit Jeans",
+    price: 999,
+    originalPrice: 1499,
+    image: "https://images.unsplash.com/photo-1542272604-787c3835535d",
+    color: "blue",
+    size: ["M", "L"],
+    style: "Casual",
+  },
+  {
+    name: "Checked Formal Shirt",
+    price: 799,
+    originalPrice: 1299,
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf",
+    color: "red",
+    size: ["M", "L"],
+    style: "Formal",
+  },
+  {
+    name: "Denim Jacket",
+    price: 1499,
+    originalPrice: 2199,
+    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f",
+    color: "blue",
+    size: ["L", "XL"],
+    style: "Casual",
+  },
+];
