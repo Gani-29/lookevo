@@ -1,6 +1,7 @@
 export default function Hero() {
   return (
     <section className="grid md:grid-cols-2 items-center px-10 py-16 bg-[#FAFAFA]">
+      {/* LEFT CONTENT */}
       <div>
         <h2 className="text-5xl font-extrabold leading-tight text-black">
           FIND CLOTHES <br />
@@ -33,11 +34,16 @@ export default function Hero() {
         </div>
       </div>
 
-      <img
-        src="https://images.unsplash.com/photo-1521334884684-d80222895322"
-        className="rounded-xl"
-        alt="fashion"
-      />
+      {/* RIGHT IMAGE */}
+      <div className="flex justify-center">
+        <div className="w-full max-w-lg h-[520px] rounded-xl overflow-hidden">
+          <img
+            src="https://www.urbanofashion.com/cdn/shop/files/a-full-body-shot-of-a-caucasian-model-we_9YkfJXZiRRCL3NZIhnYEnQ_Kw1EUCafR9WeEDmCoyzu6g.jpg?v=1742898186"
+            alt="fashion"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+      </div>
     </section>
   );
 }

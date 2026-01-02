@@ -2,22 +2,25 @@ const newArrivals = [
   {
     name: "T-shirt with Tape Details",
     price: "₹799",
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+    image:
+      "https://assets.myntassets.com/dpr_1.5,q_30,w_400,c_limit,fl_progressive/assets/images/32650057/2025/4/7/8b53c03d-2f21-4b30-aa8a-514d019a46b21744006316093-Tape-Mens-Tee-1121744006315669-1.jpg",
   },
   {
     name: "Skinny Fit Jeans",
     price: "₹799",
-    image: "https://images.unsplash.com/photo-1542272604-787c3835535d",
+    image:
+      "https://cdn18.nnnow.com/web-images/large/styles/5VO7ZWYBTYH/1711009557835/1.jpg",
   },
   {
     name: "Checked Shirt",
     price: "₹799",
-    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf",
+    image:
+      "https://campussutra.com/cdn/shop/files/CSMSSRT7738_1_3b3a4a5e-5da6-48a2-9bb3-c4bfdbe43f3f.jpg?v=1731147468",
   },
   {
     name: "Striped T-shirt",
     price: "₹799",
-    image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a",
+    image: "https://m.media-amazon.com/images/I/71Pu7Wk+8wL._AC_UY1100_.jpg",
   },
 ];
 
@@ -25,23 +28,26 @@ const topSelling = [
   {
     name: "Oversized Hoodie",
     price: "₹999",
-    image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990",
+    image:
+      "https://nobero.com/cdn/shop/files/Go_through_front.jpg?v=1732862026",
   },
   {
     name: "Denim Jacket",
     price: "₹1,299",
-    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f",
+    image:
+      "https://jimmyluxury.in/cdn/shop/files/IMG_5185copy.jpg?v=1765618387&width=2048",
   },
   {
     name: "Casual Shirt",
     price: "₹1,499",
     image:
-      "https://www.slikk.club/_next/image?url=https%3A%2F%2Fslikk-dev-assets-public.s3.amazonaws.com%2Fproduct%2F420x315%2F21131f2ddaf84293bc005386a1c4b5e5catalogimages2F0924SHWFYD06012F0924SHWFYD06011_3462404fd7334f8b88e285a6b6e70a8f.webp&w=256&q=75",
+      "https://rukminim2.flixcart.com/image/480/640/xif0q/shirt/f/5/n/xl-1-n-jio-houseofcommon-original-imah9nbhyqputg9z.jpeg?q=90",
   },
   {
     name: "Slim Fit Shirt",
     price: "₹899",
-    image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633",
+    image:
+      "https://wrogn.com/cdn/shop/files/1_920f0125-3396-4dea-a612-aa090f16405d.webp?v=1738837944",
   },
 ];
 
