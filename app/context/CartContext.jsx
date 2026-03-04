@@ -1,65 +1,107 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  const [cart, setCart] = useState([
-    {
-      id: 1,
-      name: "Gradient Graphic T-shirt",
-      price: 799,
-      image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
-      size: "Large",
-      color: "White",
-      qty: 1,
-    },
-    {
-      id: 2,
-      name: "Checkered Shirt",
-      price: 799,
-      originalPrice: 999,
-      image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf",
-      size: "Medium",
-      color: "Red",
-      qty: 1,
-    },
-    {
-      id: 3,
-      name: "Skinny Fit Jeans",
-      price: 799,
-      image: "https://images.unsplash.com/photo-1542272604-787c3835535d",
-      size: "Large",
-      color: "Blue",
-      qty: 1,
-    },
-  ]);
+  const [cart, setCart] = useState([]);
 
-  const increaseQty = (id) => {
-    setCart((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, qty: item.qty + 1 } : item
-      )
-    );
+  /* -------------------------------
+     FETCH CART FROM SUPABASE
+  ------------------------------- */
+
+  const fetchCart = async () => {
+    const { data: userData } = await supabase.auth.getUser();
+
+    if (!userData.user) return;
+
+    const { data, error } = await supabase
+      .from("cart")
+      .select("*")
+      .eq("user_id", userData.user.id);
+
+    if (!error) setCart(data);
   };
 
-  const decreaseQty = (id) => {
-    setCart((prev) =>
-      prev.map((item) =>
-        item.id === id && item.qty > 1 ? { ...item, qty: item.qty - 1 } : item
-      )
-    );
+  useEffect(() => {
+    fetchCart();
+  }, []);
+
+  /* -------------------------------
+     ADD TO CART
+  ------------------------------- */
+
+  const addToCart = async (item) => {
+    const { data: userData } = await supabase.auth.getUser();
+
+    if (!userData.user) {
+      alert("Please login first");
+      return;
+    }
+
+    const { error } = await supabase.from("cart").insert([
+      {
+        user_id: userData.user.id,
+        name: item.name,
+        price: item.price,
+        image: item.image,
+        color: item.color,
+        size: item.size,
+        qty: item.qty,
+      },
+    ]);
+
+    if (!error) fetchCart();
   };
 
-  const removeItem = (id) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
+  /* -------------------------------
+     INCREASE QTY
+  ------------------------------- */
+
+  const increaseQty = async (id, qty) => {
+    await supabase
+      .from("cart")
+      .update({ qty: qty + 1 })
+      .eq("id", id);
+
+    fetchCart();
+  };
+
+  /* -------------------------------
+     DECREASE QTY
+  ------------------------------- */
+
+  const decreaseQty = async (id, qty) => {
+    if (qty <= 1) return;
+
+    await supabase
+      .from("cart")
+      .update({ qty: qty - 1 })
+      .eq("id", id);
+
+    fetchCart();
+  };
+
+  /* -------------------------------
+     REMOVE ITEM
+  ------------------------------- */
+
+  const removeItem = async (id) => {
+    await supabase
+      .from("cart")
+      .delete()
+      .eq("id", id);
+
+    fetchCart();
   };
 
   return (
     <CartContext.Provider
       value={{
         cart,
+        addToCart,
         increaseQty,
         decreaseQty,
         removeItem,

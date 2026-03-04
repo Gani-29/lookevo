@@ -27,9 +27,9 @@ export default function CartPage() {
             <CartItem
               key={item.id}
               item={item}
-              increaseQty={increaseQty}
-              decreaseQty={decreaseQty}
-              removeItem={removeItem}
+              increaseQty={() => increaseQty(item.id, item.qty)}
+              decreaseQty={() => decreaseQty(item.id, item.qty)}
+              removeItem={() => removeItem(item.id)}
             />
           ))}
         </div>
@@ -63,7 +63,9 @@ export default function CartPage() {
               placeholder="Add promo code"
               className="border px-3 py-2 rounded w-full"
             />
-            <button className="bg-black text-white px-4 rounded">Apply</button>
+            <button className="bg-black text-white px-4 rounded">
+              Apply
+            </button>
           </div>
 
           <button className="w-full bg-black text-white py-3 rounded-full">
